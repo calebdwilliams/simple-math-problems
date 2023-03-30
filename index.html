@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kids do math</title>
+        <style>
+            #app {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                column-gap: 96px;
+                row-gap: 48px;
+                }
+
+            #app div {
+                align-items: center;
+                display: flex;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+
+        <script type="module">
+            import { LitElement, html, css } from 'https://cdn.skypack.dev/lit';
+            import { customElement, property } from 'https://cdn.skypack.dev/lit/decorators.js';
+
+            class Question extends LitElement {
+                static styles = [css`
+                :host { display: block; }
+                table {
+                    font-family: Helvetica;
+                    font-size: 24px;
+                    font-variant-numeric: tabular-nums;
+                }
+                hr {
+                    border-bottom: 5px solid #000;
+                }
+                `];
+
+                static properties = {
+                    base: { type: Number },
+                    multiplicand: { type: Number }
+                };
+
+                constructor() {
+                    super();
+                    base = 0;
+                    multiplicand = 0;
+                }
+                
+                get answer() {
+                    return this.base * this.multiplicand;
+                }
+                
+                render() {
+                    return html`<table>
+                    <tr>
+                        <td></td>
+                        <td>${this.base}</td>
+                    </tr>
+                    <tr>
+                        <td>✖️</td>
+                        <td>${this.multiplicand}</td>
+                    </table>
+                    <hr>`
+                }
+            }
+
+            const urlSearchParams = new URLSearchParams(window.location.search);
+            const app = document.getElementById('app');
+            const base = +urlSearchParams.get('base');
+            const max = 10;
+            for (let i = 0; i < 25; i += 1) {
+                const wrapper = document.createElement('div');
+                const randomInt = Math.floor(Math.random() * max);
+                const element = new Question();
+            }
+        </script>
+    </body>
+</html>
