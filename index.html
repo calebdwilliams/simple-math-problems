@@ -68,12 +68,14 @@
 
             const urlSearchParams = new URLSearchParams(window.location.search);
             const app = document.getElementById('app');
-            const base = +urlSearchParams.get('base');
             const max = 10;
+            const base = +urlSearchParams.get('base') || Math.floor(Math.random() * max);
             for (let i = 0; i < 25; i += 1) {
                 const wrapper = document.createElement('div');
                 const randomInt = Math.floor(Math.random() * max);
                 const element = new Question();
+
+                app.append(wrapper);
             }
         </script>
     </body>
