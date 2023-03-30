@@ -74,6 +74,8 @@
                 const wrapper = document.createElement('div');
                 const randomInt = Math.floor(Math.random() * max);
                 const element = new Question();
+                element.base = base;
+                element.multiplicand = randomInt;
                 wrapper.append(element);
                 app.append(wrapper);
             }
