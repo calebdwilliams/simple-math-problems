@@ -1,4 +1,4 @@
-import { MathQuestion } from './MathQuestion.js';
+import { MathQuestion } from './math-question.js';
 
 customElements.define('math-question', MathQuestion);
 
