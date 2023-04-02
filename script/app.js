@@ -4,7 +4,7 @@ customElements.define('math-question', MathQuestion);
 
 function generate(app, max = 10, count = 25, problemType = 'multiplication') {
   for (let i = 0; i < count; i += 1) {
-    const wrapper = document.createElement('div');
+    const wrapper = document.createElement('li');
     let randomInt = Math.floor(Math.random() * max);
 
     if (problemType === 'subtraction') {
