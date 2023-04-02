@@ -1,0 +1,25 @@
+{
+  "name": "simple-math-practice-app",
+  "version": "1.0.0",
+  "description": "Simple math practice app for grade schoolers",
+  "main": " ",
+  "scripts": {
+    "start": "web-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calebdwilliams/simple-math-problems.git"
+  },
+  "keywords": [
+    "Math"
+  ],
+  "author": "Caleb D. Williams",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/calebdwilliams/simple-math-problems/issues"
+  },
+  "homepage": "https://github.com/calebdwilliams/simple-math-problems#readme",
+  "devDependencies": {
+    "@web/dev-server": "^0.1.37"
+  }
+}
