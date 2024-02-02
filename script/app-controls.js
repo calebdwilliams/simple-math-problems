@@ -45,7 +45,7 @@ export class AppControls extends LitElement {
       </div>
       <div>
         <label for="problem-type">Problem type</label>
-        <select id="problem-type" name="problem-type" .value=${live(this.problemType)}>
+        <select id="problem-type" name="type" .value=${live(this.problemType)}>
           <option value="">Please select</option>
           <option value="addition">Addition</option>
           <option value="subtraction">Subtraction</option>
