@@ -1,5 +1,7 @@
 import { MathQuestion } from './math-question.js';
+import { AppControls } from './app-controls.js';
 
+customElements.define('app-controls', AppControls);
 customElements.define('math-question', MathQuestion);
 
 function generate(app, max = 10, count = 25, problemType = 'multiplication') {
@@ -13,13 +15,14 @@ function generate(app, max = 10, count = 25, problemType = 'multiplication') {
 
     const element = new MathQuestion();
     element.base = base;
-    element.multiplicand = randomInt;
+    element.numberTwo = randomInt;
     element.symbol = symbolMap.get(problemType);
     wrapper.append(element);
     app.append(wrapper);
   }
 }
 
+const controls = document.querySelector('app-controls');
 const urlSearchParams = new URLSearchParams(window.location.search);
 const app = document.getElementById('app');
 const max = 10;
@@ -32,5 +35,9 @@ const symbolMap = new Map([
   ['multiplication', '✖️'],
   ['division', '➗']
 ]);
+
+controls.base = base;
+controls.problemType = problemType;
+controls.count = count;
 
 generate(app, max, count, problemType);
