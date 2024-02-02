@@ -4,8 +4,11 @@ import { live } from 'https://cdn.skypack.dev/lit@v3.1.0/directives/live.js';
 export class AppControls extends LitElement {
   static styles = css`
     :host {
+      box-shadow: var(--shadow-2);
       container-type: inline-size;
       display: block;
+      position: sticky;
+        top: 0;
     }
     form {
       background: ButtonFace;
